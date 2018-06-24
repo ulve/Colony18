@@ -42,4 +42,16 @@ const printStory = s => {
   console.log("3: " + s.get("three").get("text"));
 };
 
-export { addStory, createStory, nextStory, printStory };
+const storyToText = s => {
+  return (
+    s.get("text") +
+    "1: " +
+    s.get("one").get("text") +
+    "2: " +
+    s.get("two").get("text") +
+    "3: " +
+    s.get("three").get("text")
+  );
+};
+
+export { addStory, createStory, nextStory, printStory, storyToText };
