@@ -1,13 +1,21 @@
 import { initGameState } from "./gameState";
-//import * as matchers from "jest-immutable-matchers";
-import { describe, beforeEach, addMatchers, it, expect, toBe } from "jest";
+import * as matchers from "jest-immutable-matchers";
 
 describe("Game state tests", () => {
-  //beforeEach(() => addMatchers(matchers));
+  beforeEach(() => jest.addMatchers(matchers));
 
   it("Can init game state", () => {
-    expect(2).toBe(2);
-    // const gameState = initGameState();
-    //expect(gameState).toBeImmutableMap();
+    const gameState = initGameState();
+    expect(gameState).toBeImmutableMap();
+  });
+
+  it("Game state contains stories", () => {
+    const gameState = initGameState();
+    expect(gameState.get("stories")).not.toBeUndefined();
+  });
+
+  it("Game state contains artifacts", () => {
+    const gameState = initGameState();
+    expect(gameState.get("artifacts")).not.toBeUndefined();
   });
 });
