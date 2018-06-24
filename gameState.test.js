@@ -11,11 +11,47 @@ describe("Game state tests", () => {
 
   it("Game state contains stories", () => {
     const gameState = initGameState();
-    expect(gameState.get("stories")).not.toBeUndefined();
+    expect(gameState.get("stories")).toBeDefined();
   });
 
   it("Game state contains artifacts", () => {
     const gameState = initGameState();
-    expect(gameState.get("artifacts")).not.toBeUndefined();
+    expect(gameState.get("artifacts")).toBeDefined();
+  });
+
+  it("Workers have relation to Scientists", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["workers", "relations", "scientists"]);
+    expect(relation).toBeDefined();
+  });
+
+  it("Workers have relation to Engineers", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["workers", "relations", "engineers"]);
+    expect(relation).toBeDefined();
+  });
+
+  it("Engineers have relation to Scientists", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["engineers", "relations", "scientists"]);
+    expect(relation).toBeDefined();
+  });
+
+  it("Engineers have relation to Workers", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["engineers", "relations", "workers"]);
+    expect(relation).toBeDefined();
+  });
+
+  it("Scientists have relation to Workers", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["scientists", "relations", "workers"]);
+    expect(relation).toBeDefined();
+  });
+
+  it("Scientists have relation to Engineers", () => {
+    const gameState = initGameState();
+    const relation = gameState.getIn(["scientists", "relations", "engineers"]);
+    expect(relation).toBeDefined();
   });
 });
