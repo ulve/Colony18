@@ -22,7 +22,13 @@ const initGameState = () =>
         engineers: 50,
         workers: 50
       })
-    })
+    }),
+    food: 100,
+    foodProduction: 10,
+    energy: 100,
+    energyProduction: 10,
+    mech: 100,
+    mechProduction: 10
   });
 
 export { initGameState };

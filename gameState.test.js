@@ -54,4 +54,34 @@ describe("Game state tests", () => {
     const relation = gameState.getIn(["scientists", "relations", "engineers"]);
     expect(relation).toBeDefined();
   });
+
+  it("Have food", () => {
+    const gameState = initGameState();
+    expect(gameState.get("food")).toBeDefined();
+  });
+
+  it("Have food production", () => {
+    const gameState = initGameState();
+    expect(gameState.get("foodProduction")).toBeDefined();
+  });
+
+  it("Have energy", () => {
+    const gameState = initGameState();
+    expect(gameState.get("energy")).toBeDefined();
+  });
+
+  it("Have energy production", () => {
+    const gameState = initGameState();
+    expect(gameState.get("energyProduction")).toBeDefined();
+  });
+
+  it("Have mech", () => {
+    const gameState = initGameState();
+    expect(gameState.get("mech")).toBeDefined();
+  });
+
+  it("Have mech production", () => {
+    const gameState = initGameState();
+    expect(gameState.get("mechProduction")).toBeDefined();
+  });
 });
